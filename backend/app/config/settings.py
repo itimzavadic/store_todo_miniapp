@@ -1,10 +1,11 @@
 from functools import lru_cache
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
     app_version: str = "0.1.0"
     env: str = "development"
+    telegram_bot_token: str = ""
 
     class Config:
         env_file = ".env"
